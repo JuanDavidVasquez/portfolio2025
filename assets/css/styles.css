@@ -32,6 +32,7 @@ body{
     font-family: "Ruhl", sans-serif;
     animation: opening 1s ease-in-out;
     background: var(--main-color);
+    overflow-x: hidden;
 }
 h1{
     font-size: var(--header1);
@@ -160,7 +161,7 @@ header{
     padding: 0 10%;
 }
 .header-text{
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -174,6 +175,45 @@ header{
     -webkit-text-stroke: 1px var(--header1);
     margin-bottom: 1rem;
     color: transparent;
+}
+
+/* Estilo base para cada letra */
+.header-text h2 span {
+    display: inline-block;
+    color: transparent;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.5);
+    animation: lightEffect 10s ease-in-out infinite, animationTranslate 2s ease-in-out infinite;
+    opacity: 0;
+}
+
+/* Animación de iluminación de letras */
+@keyframes lightEffect {
+    0% {
+        opacity: 0;
+        text-shadow: none;
+    }
+    50%, 100% {
+        opacity: 1;
+        color: var(--header1);
+        text-shadow: 0 0 8px transparent,transparent,rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 1);
+    }
+}
+@keyframes animationTranslate {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .header-text p{
@@ -226,7 +266,6 @@ header{
 
 .services{
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -261,4 +300,70 @@ header{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+/******************* 
+        @media
+*********************/
+
+@media screen and (max-width: 768px){
+    nav{
+        display: none;
+    }
+    .content-header{
+        transform: translate(0px, 185px);
+    }
+    #headerTittle{
+        font-size:var(--fontHeader4);
+        width: 100%;
+    }
+    #headerText{
+        width: 100%;
+        font-size: var(--fontHeader1);
+    }
+    .about{
+        flex-wrap: wrap;
+    }
+    .about .content{
+        flex-direction: column-reverse;
+    }
+    .about .content h2{
+        width: 100%;
+        text-align: center;
+        font-size: var(--fontHeader2);
+    }
+    .about .content p{
+        width: 100%;
+        font-size: var(--fontHeader1);
+    }
+
+    .services{
+        flex-wrap: wrap;
+    }
+    .services .content{
+        flex-direction: column;
+        padding: 0;
+    }
+    .services .content h2{
+        width: 100%;
+        text-align: center;
+        font-size: var(--fontHeader2);
+        padding: 5% 10%;
+    }
+    .services .content p{
+        width: 100%;
+        font-size: var(--fontHeader1);
+        padding: 1em;
+    }
+    .services .content .service{
+        width: 100%;
+        margin: 1em 0em;
+    }
+    .services .content .service h3{
+        width: 100%;
+        text-align: center;
+        font-size: var(--fontHeader2);
+        margin: 1em 0em;
+    }
 }
