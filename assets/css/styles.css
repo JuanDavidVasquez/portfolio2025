@@ -1,0 +1,264 @@
+/* Global styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 72.5%;
+    --fontHeader1: calc(2rem + 1vw);
+    --fontHeader2: calc(3.5rem + 1vw);
+    --fontHeader3: calc(3rem + 1vw);
+    --fontHeader4: calc(3.4rem + 1vw);
+    --text: calc(1.5rem + 1vw);
+    --big: calc(6rem + 1vw);
+    --ultra: calc(8rem + 1vw);
+    --main-color: #000; 
+    --header1: #1E90FF;   
+    --header2: #32CD32;   
+    --header3: #FFD700;  
+    --text: #FFFFFF;    
+    --special-color: #906272;
+    --background-color: #414141;
+    --gray-text: #525252; 
+    --light-gray: #D3D3D3;
+    --error-color: #FF6347;
+    --success-color: #32CD32; 
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Ruhl", sans-serif;
+    animation: opening 1s ease-in-out;
+    background: var(--main-color);
+}
+h1{
+    font-size: var(--header1);
+    font-family: "Vibes", sans-serif;
+}
+li,button,label,input,p{
+    font-size: var(--text);
+}
+h2{
+    font-size: var(--header2);
+}
+h3{
+    font-size: var(--header3);
+    font-weight: normal;
+}
+h4,h5{
+    font-size: var(--header4);
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+button{
+    padding: 2rem 6rem;
+    background-color: #4c6e97;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out 1s;
+    transition: all 1s ease;
+}
+button:hover{
+    background: #27394e;
+    font-size: 2.6rem;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleStyle{
+    font-size: var(--ultra);
+    font-family: "Vibes", sans-serif;
+    stroke-width: 1px;
+    stroke: var(--header1);
+    -webkit-text-stroke: 1px var(--header1);
+    margin-bottom: 1rem;
+    color: transparent;
+    text-align: center;
+    padding: 1em;
+}
+
+/******************* 
+        Nav
+*********************/
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    background-color: var(--main-color);
+    color: var(--light-gray);
+}
+nav .logo{
+    width: 100%;
+    font-size: var(--fontHeader1);
+    font-family: "Vibes", sans-serif;
+}
+nav .menu{
+    width: 100%;
+}
+nav .menu ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;    
+}
+
+nav .menu ul li a{
+    color: var(--light-gray);
+    font-size: var(--fontHeader1);
+    transition: font-size 0.5s ease-in-out;
+}
+
+nav .menu ul li:hover a{
+    font-size: var(--fontHeader2);
+    color: var(--text);
+}
+
+
+/******************* 
+        Header
+*********************/
+
+header{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, .7)), url(../img/header/imgheader.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-header{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10%;
+}
+.header-text{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.header-text h2{
+    font-size: var(--ultra);
+    font-family: "Vibes", sans-serif;
+    stroke-width: 1px;
+    stroke: var(--header1);
+    -webkit-text-stroke: 1px var(--header1);
+    margin-bottom: 1rem;
+    color: transparent;
+}
+
+.header-text p{
+    width: 50%;
+    font-size: 2rem;
+    text-align: justify;
+
+}
+
+/******************* 
+        About
+*********************/
+
+.about{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: var(--main-color);
+    color: var(--text);
+}
+
+.about .content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.about .content h2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about .content p{
+    width: 50%;
+    font-size: var(--fontHeader1);
+    text-align: justify;
+}
+
+/******************* 
+        Services
+*********************/
+
+.services{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: var(--main-color);
+    color: var(--text);
+}
+
+.services .content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.services .content h2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.services .content p{
+    width: 100%;
+    font-size: var(--fontHeader1);
+    text-align: justify;
+}
+
+.service img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
