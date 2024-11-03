@@ -4,16 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
   headerAnimation();
 
   const textElement = document.querySelector(".animated-text");
-  const text = textElement.innerText;
-  textElement.innerHTML = ""; // Limpiar el contenido original
   
-  // Dividir el texto en letras y envolver cada letra en un span
-  text.split("").forEach((letter, index) => {
-      const span = document.createElement("span");
-      span.innerText = letter;
-      span.style.animationDelay = `${index * 0.2}s`; // Escalonar el inicio de cada letra
-      textElement.appendChild(span);
-  });
+
+  setTimeout(() => {
+    const text = textElement.innerText;
+  textElement.innerHTML = ""; 
+    // Dividir el texto en letras y envolver cada letra en un span
+    text.split("").forEach((letter, index) => {
+        const span = document.createElement("span");
+        span.innerText = letter;
+        span.style.animationDelay = `${index * 0.2}s`; // Escalonar el inicio de cada letra
+        textElement.appendChild(span);
+    });
+  }, 2500);
+  
+
 
   const sections = document.querySelectorAll("section");
   sections.forEach((section) => {
