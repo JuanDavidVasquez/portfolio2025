@@ -9,7 +9,8 @@ export const headerAnimation = () => {
         opacity: 0,
         duration: 2,
         ease: 'power4.out'
-    }).from(headerText, {
+    })
+    .from(headerText, {
         y: 50,
         opacity: 0,
         duration: 1,
@@ -21,7 +22,9 @@ export const animationServices = () => {
     const services = document.querySelectorAll('.service');
 
     services.forEach((service, index) => {
-        // Animación general para cada elemento
+        const image = service.querySelector('img');
+        
+        // Animación general para cada elemento de servicio
         gsap.from(service, {
             y: 100,
             opacity: 0,
@@ -31,13 +34,10 @@ export const animationServices = () => {
                 trigger: service,
                 start: 'top 80%',
                 toggleActions: 'play reverse play reverse',
-                markers: true
             }
         });
 
-        const image = service.querySelector('img');
-        
-        //par o impar
+        // Animación específica para la imagen
         if (image) {
             gsap.from(image, {
                 x: index % 2 === 0 ? -200 : 200, // Izquierda para par, derecha para impar
